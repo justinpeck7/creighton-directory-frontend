@@ -1,0 +1,14 @@
+<div class="home">
+  <div class="jumbotron centered">
+    <h1>Secured Home Page</h1>
+    <h2 ng-show="jwt">Current Json Web Token is:</h2>
+    <pre ng-show="jwt" class="jwt"><code>{{jwt}}</code></pre>
+    <h2 ng-show="jwt">Decoded:</h2>
+    <pre ng-show="jwt" class="jwt"><code>{{decodedJwt | json}}</code></pre>
+    <h2 ng-show="userList">All Existing Users:</h2>
+    <p><a class="btn btn-primary btn-lg" role="button" ng-click="updateExistingUsers()">Update Users</a></p>
+    <pre ng-show="userList" class="jwt"><code>{{userList}}</code></pre>
+    <p><a class="btn btn-primary btn-lg" role="button" ng-click="logout()">Logout</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" ng-click="deleteUsers()">Delete All Users</a></p>
+  </div>
+</div>

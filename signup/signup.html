@@ -1,0 +1,44 @@
+
+<div class="signup center-block jumbotron">
+  <form role="form">
+  <h1>Signup</h1>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" ng-model="user.name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="dormName">Dorm Name</label>
+    <input type="text" class="form-control" id="dormName" ng-model="user.dormName" placeholder="Dorm Name">
+  </div>
+  <div class="form-group">
+    <label for="dormRoom">Dorm Room</label>
+    <input type="text" class="form-control" id="dormRoom" ng-model="user.dormRoom" placeholder="Dorm Room">
+  </div>
+  <div class="form-group">
+    <label for="netId">Net ID</label>
+    <input type="text" class="form-control" id="netId" ng-model="user.netId" placeholder="Net ID">
+  </div>
+  <div class="form-group">
+    <label for="gradYear">Graduating Year</label>
+    <input type="text" class="form-control" id="gradYear" ng-model="user.gradYear" placeholder="Graduating Year">
+  </div>
+  <div class="form-group">
+    <label for="major">Major</label>
+    <input type="text" class="form-control" id="major" ng-model="user.major" placeholder="Major">
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="text" class="form-control" id="phone" ng-model="user.phone" placeholder="Phone">
+  </div>
+  <div class="form-group">
+    <label for="groups">Groups</label>
+    <input type="text" class="form-control" id="groups" ng-model="user.groups" placeholder="Groups">
+  </div>
+  <div class="form-group">
+    <label for="passwprd">Password</label>
+    <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="createUser()">Submit</button>
+</form>
+<a ui-sref="login()">Click here to Login</a>
+</div>
