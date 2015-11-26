@@ -1,8 +1,9 @@
-angular.module( 'sample', [
-  'sample.home',
-  'sample.login',
-  'sample.signup',
-  'sample.chat',
+angular.module( 'creightonDir', [
+  'creightonDir.home',
+  'creightonDir.login',
+  'creightonDir.signup',
+  'creightonDir.chat',
+  'creightonDir.search',
   'angular-jwt',
   'angular-storage',
   'btford.socket-io'

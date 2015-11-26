@@ -1,4 +1,4 @@
-angular.module( 'sample.signup', [
+angular.module( 'creightonDir.signup', [
   'ui.router',
   'angular-storage'
 ])

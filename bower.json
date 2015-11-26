@@ -2,7 +2,8 @@
   "name": "Creighton frontend",
   "version": "0.0.0",
   "authors": [
-  "Justin Peck"],
+    "Justin Peck"
+  ],
   "main": "app.js",
   "license": "MIT",
   "dependencies": {
@@ -13,7 +14,8 @@
     "angular-jwt": "~0.0.4",
     "a0-angular-storage": "~0.0.6",
     "typekit-load": "~0.1.2",
-    "angular-ui-router": "~0.2.11"
+    "angular-ui-router": "~0.2.11",
+    "angular-socket-io": "~0.7.0"
   },
   "ignore": [
     "**/.*",

@@ -1,4 +1,4 @@
-angular.module('creightonDir.chat', [
+angular.module('creightonDir.search', [
     'ui.router',
     'angular-storage',
     'angular-jwt'

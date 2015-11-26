@@ -1,4 +1,4 @@
-angular.module('sample.home', [
+angular.module('creightonDir.home', [
     'ui.router',
     'angular-storage',
     'angular-jwt'
