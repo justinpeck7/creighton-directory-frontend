@@ -4,39 +4,43 @@
   <h1 class="text-center">Signup</h1>
   <div class="form-group">
     <label for="name">Full Name</label>
-    <input type="text" class="form-control" id="name" ng-model="user.name" placeholder="Name">
+    <input type="text" class="form-control" id="name" ng-model="signup.user.name" placeholder="Name">
   </div>
   <div class="form-group">
     <label for="dormName">Dorm Building</label>
-    <input type="text" class="form-control" id="dormName" ng-model="user.dormName" placeholder="Dorm Name">
+    <input type="text" class="form-control" id="dormName" ng-model="signup.user.dormName" placeholder="Dorm Name">
   </div>
   <div class="form-group">
     <label for="dormRoom">Dorm Room</label>
-    <input type="text" class="form-control" id="dormRoom" ng-model="user.dormRoom" placeholder="Dorm Room">
+    <input type="text" class="form-control" id="dormRoom" ng-model="signup.user.dormRoom" placeholder="Dorm Room">
   </div>
   <div class="form-group">
     <label for="netId">Net ID</label>
-    <input type="text" class="form-control" id="netId" ng-model="user.netId" placeholder="Net ID">
+    <input type="text" class="form-control" id="netId" ng-model="signup.user.netId" placeholder="Net ID">
   </div>
   <div class="form-group">
     <label for="gradYear">Graduating Year</label>
-    <input type="text" class="form-control" id="gradYear" ng-model="user.gradYear" placeholder="Graduating Year">
+    <input type="text" class="form-control" id="gradYear" ng-model="signup.user.gradYear" placeholder="Graduating Year">
   </div>
   <div class="form-group">
     <label for="major">Major</label>
-    <input type="text" class="form-control" id="major" ng-model="user.major" placeholder="Major">
+    <input type="text" class="form-control" id="major" ng-model="signup.user.major" placeholder="Major">
   </div>
   <div class="form-group">
     <label for="phone">Phone</label>
-    <input type="text" class="form-control" id="phone" ng-model="user.phone" placeholder="Phone">
+    <input type="text" class="form-control" id="phone" ng-model="signup.user.phone" placeholder="Phone">
+  </div>
+   <div class="form-group">
+    <label for="phone">Email</label>
+    <input type="text" class="form-control" id="email" ng-model="signup.user.email" placeholder="Email">
   </div>
   <div class="form-group">
     <label for="groups">Groups (Comma Separated)</label>
-    <input type="text" class="form-control" id="groups" ng-model="user.groups" placeholder="Groups">
+    <input type="text" class="form-control" id="groups" ng-model="signup.user.groups" placeholder="Groups">
   </div>
   <div class="form-group">
     <label for="passwprd">Password</label>
-    <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password">
+    <input type="password" class="form-control" id="password" ng-model="signup.user.password" placeholder="Password">
   </div>
   <button type="submit" class="btn btn-lg btn-block loginBtn" ng-click="signup.createUser()">Submit</button>
 </form>

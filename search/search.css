@@ -1,0 +1,13 @@
+.basicForm {
+    width: 40%;
+}
+
+.advancedPrompt {
+    margin-top: 15px;
+}
+
+.advancedPrompt a {
+    color: #25FF00;
+    font-weight: bold;
+    cursor: pointer;
+}

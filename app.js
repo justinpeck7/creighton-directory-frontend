@@ -7,6 +7,7 @@ angular.module('creightonDir', [
     'creightonDir.announcements',
     'angular-jwt',
     'angular-storage',
+    'ngResource',
     'btford.socket-io'
   ])
   .config(function myAppConfig($urlRouterProvider, jwtInterceptorProvider, $httpProvider) {

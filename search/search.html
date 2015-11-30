@@ -1,6 +1,17 @@
-<div ng-repeat="msg in chat.messages track by $index">
-    <strong>{{msg.name}}: </strong><span>{{msg.message}}</span>
+<h3>Search Student by Name</h3>
+<form ng-submit="search.doLookup()" class="basicForm">
+<div class="input-group">
+    <input type="text" class="form-control" ng-model="search.lookup.name">
+    <div class="input-group-btn">
+        <input type="submit" value="Send" class="btn btn-default">
+    </div>
 </div>
-<form ng-submit="chat.send()">
-<input type="text" ng-model="chat.input"><input type="submit" value="send">
 </form>
+<div class="advancedPrompt">No luck? Try the <a ng-click="search.showAdvanced()">Advanced</a> search</div>
+<hr>
+
+<div ng-repeat="result in search.results">
+    <h2>{{result.name}}</h2>
+    <span>{{result.netId}}</span>
+    <hr class="hrStyle">
+</div>

@@ -54,11 +54,11 @@ angular.module('creightonDir.chat', [
       updateScroll();
     }
 
-    socket.on('message', function(sent) {
-      chat.messages.push({
-        name: sent.name,
-        message: sent.message
-      });
+    socket.on('message', function(data) {
+        chatArrays[data.room].push({
+          name: data.name,
+          message: data.message
+        })
     });
 
     function updateScroll() {
