@@ -2,11 +2,11 @@
     width: 40%;
 }
 
-.advancedPrompt {
+.searchPrompt {
     margin-top: 15px;
 }
 
-.advancedPrompt a {
+.searchPrompt a {
     color: #25FF00;
     font-weight: bold;
     cursor: pointer;
@@ -21,4 +21,12 @@
     padding: 10px;
     border-radius: 10px;
     padding-bottom: 30px;
+}
+
+.searchSubmit {
+    background-color: rgb(44, 45, 47);
+}
+
+.searchSubmit:hover {
+    color: gray;
 }
