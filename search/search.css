@@ -11,3 +11,13 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.resultLabel {
+    color: #CECECE;
+}
+
+.resultsWrapper {
+    background-color: rgba(82, 82, 82, 0.18);
+    padding: 10px;
+    border-radius: 10px;
+}

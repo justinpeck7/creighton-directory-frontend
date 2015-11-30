@@ -1,4 +1,4 @@
-<div>
+<div class="chatWrapper">
     <h2 class="text-center chatHeader">Choose a Chat Room</h2>
     <div class="buttonWrapper">
         <div class="btn-group btn-group-large" role="group">
@@ -9,9 +9,7 @@
             <button type="button" class="btn btn-default" ng-click="chat.join(4)">Senior</button>
         </div>
     </div>
-</div>
 <div class="text-center currentRoom">Currently in: {{chat.room}}</div>
-<div>
     <div class="chatRoom" id="chatRoom">
         <div ng-repeat="msg in chat.messages track by $index">
             <strong>{{msg.name}}: </strong><span>{{msg.message}}</span>

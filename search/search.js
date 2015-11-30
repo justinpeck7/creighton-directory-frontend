@@ -27,8 +27,16 @@ angular.module('creightonDir.search', [
       Find.get({
         name: search.lookup.name || ''
       }).$promise.then(function(data) {
-        console.log(data.users);
-        search.results = data.users;
+        search.results = preProcessData(data);
       });
     };
+
+    function preProcessData(data) {
+      for (var i in data.users) {
+        if(data.users[i].groups) {
+          data.users[i].groups = data.users[i].groups.join(', ');
+        }
+      }
+      return data.users;
+    }
   });
