@@ -55,9 +55,13 @@ angular.module('creightonDir.chat', [
     }
 
     socket.on('message', function(data) {
+      if(data.name === jwt.name) {
+        data.isSelf = true;
+      }
         chatArrays[data.room].push({
           name: data.name,
-          message: data.message
+          message: data.message,
+          isSelf : data.isSelf
         })
     });
 

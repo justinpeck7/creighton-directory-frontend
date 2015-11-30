@@ -12,7 +12,7 @@
 <div class="text-center currentRoom">Currently in: {{chat.room}}</div>
     <div class="chatRoom" id="chatRoom">
         <div ng-repeat="msg in chat.messages track by $index">
-            <strong>{{msg.name}}: </strong><span>{{msg.message}}</span>
+            <strong ng-class="{self : msg.isSelf, chatName: true}">{{msg.name}}: </strong><span>{{msg.message}}</span>
         </div>
     </div>
     <form ng-submit="chat.send()" class="chatForm">

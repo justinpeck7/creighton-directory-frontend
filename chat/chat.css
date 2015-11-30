@@ -5,7 +5,7 @@
 .chatRoom {
     color: white;
     width: 60%;
-    height: 540px;
+    height: 60vh;
     margin: 0 auto;
     background-color: rgba(51, 49, 49, 1);
     border: 2px solid #484848;
@@ -27,4 +27,12 @@
 
 .chatWrapper {
     margin-bottom: 30px;
+}
+
+.chatName {
+    color: #FF00C4;
+}
+
+.self {
+    color: rgb(47, 255, 0);
 }
