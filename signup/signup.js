@@ -6,18 +6,19 @@ angular.module( 'creightonDir.signup', [
   $stateProvider.state('signup', {
     url: '/signup',
     controller: 'SignupCtrl',
+    controllerAs: 'signup',
     templateUrl: 'signup/signup.html'
   });
 })
-.controller('SignupCtrl', function SignupController( $scope, $http, store, $state) {
+.controller('SignupCtrl', function SignupController($http, store, $state) {
+  var signup = this;
+  signup.user = {};
 
-  $scope.user = {};
-
-  $scope.createUser = function() {
+  signup.createUser = function() {
     $http({
       url: 'http://localhost:3001/user/createUser',
       method: 'POST',
-      data: $scope.user
+      data: signup.user
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
       $state.go('home');

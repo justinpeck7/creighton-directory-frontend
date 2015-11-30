@@ -1,15 +1,15 @@
-<div class="login jumbotron center-block">
-  <h1>Login</h1>
+<div class="login center-block">
+  <h1 class="text-center">Sign In</h1>
   <form role="form">
   <div class="form-group">
-    <label for="netId">Net ID</label>
-    <input type="text" class="form-control" ng-model="user.netId" id="netId" placeholder="Net ID">
+    <input type="text" class="form-control" ng-model="login.user.netId" id="netId" placeholder="Net ID">
   </div>
   <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password">
+    <input type="password" class="form-control" id="password" ng-model="login.user.password" placeholder="Password">
   </div>
-  <button type="submit" class="btn btn-default" ng-click="login()">Submit</button>
+  <button type="submit" class="btn btn-lg btn-block loginBtn" ng-click="login.login()">Submit</button>
 </form>
-<a ui-sref="signup()">Click here to Signup</a>
+<div class="text-center signinPrompt">
+  Don't have an account? Click <a ui-sref="signup()" class="signupLink">here</a> to sign up.
+</div>
 </div>

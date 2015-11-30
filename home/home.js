@@ -7,37 +7,23 @@ angular.module('creightonDir.home', [
     $stateProvider.state('home', {
       url: '/',
       controller: 'HomeCtrl',
+      controllerAs: 'home',
       templateUrl: 'home/home.html',
       data: {
         requiresLogin: true
       }
     });
   })
-  .controller('HomeCtrl', function HomeController($scope, $http, store, jwtHelper, $state) {
+  .controller('HomeCtrl', function HomeController($http, store, jwtHelper, $rootScope) {
+    var home = this,
+      jwt  = store.get('jwt');
+    $rootScope.showNavBar = true;
+    home.username = jwtHelper.decodeToken(jwt).name.split(' ')[0];
+    home.loading = true;
 
-    $scope.jwt = store.get('jwt');
-    $scope.decodedJwt = $scope.jwt && jwtHelper.decodeToken($scope.jwt);
-
-    $http.get('http://localhost:3001/user/auth/allUsers').success(function(data) {
-      $scope.userList = data;
+    $http.get('http://localhost:3001/announcements/auth/all').then(function(res) {
+      home.announcements = res.data;
+      home.loading = false;
     });
-
-    $scope.updateExistingUsers = function() {
-      $http.get('http://localhost:3001/user/auth/allUsers').success(function(data) {
-        $scope.userList = data;
-      });
-    };
-
-    $scope.logout = function() {
-      store.remove('jwt');
-      $state.go('login');
-    };
-
-    $scope.deleteUsers = function() {
-      $http.delete('http://localhost:3001/user/auth/allUsers')
-        .success(function(data) {
-          $scope.userList = data;
-        });
-    }
 
   });

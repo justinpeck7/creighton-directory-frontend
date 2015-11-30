@@ -1,0 +1,13 @@
+.anc {
+  width: 40%;
+  margin-top: 20%;
+}
+
+.ancText {
+    width: 100%;
+    color: #555;
+}
+
+.ancAdded {
+    color: #02FF00;
+}

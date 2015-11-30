@@ -1,3 +1,18 @@
 .login {
   width: 40%;
+  margin-top: 30%;
+}
+.signinPrompt {
+    margin-top: 10px;
+}
+.signupLink {
+    color: white;
+    /*font-weight: bold;*/
+    text-decoration: underline;
+}
+.loginBtn {
+    background-color: rgb(44, 45, 47);
+}
+.loginBtn:hover {
+    color: gray;
 }

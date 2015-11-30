@@ -1,13 +1,13 @@
 
-<div class="signup center-block jumbotron">
+<div class="signup center-block">
   <form role="form">
-  <h1>Signup</h1>
+  <h1 class="text-center">Signup</h1>
   <div class="form-group">
-    <label for="name">Name</label>
+    <label for="name">Full Name</label>
     <input type="text" class="form-control" id="name" ng-model="user.name" placeholder="Name">
   </div>
   <div class="form-group">
-    <label for="dormName">Dorm Name</label>
+    <label for="dormName">Dorm Building</label>
     <input type="text" class="form-control" id="dormName" ng-model="user.dormName" placeholder="Dorm Name">
   </div>
   <div class="form-group">
@@ -31,14 +31,17 @@
     <input type="text" class="form-control" id="phone" ng-model="user.phone" placeholder="Phone">
   </div>
   <div class="form-group">
-    <label for="groups">Groups</label>
+    <label for="groups">Groups (Comma Separated)</label>
     <input type="text" class="form-control" id="groups" ng-model="user.groups" placeholder="Groups">
   </div>
   <div class="form-group">
     <label for="passwprd">Password</label>
     <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password">
   </div>
-  <button type="submit" class="btn btn-default" ng-click="createUser()">Submit</button>
+  <button type="submit" class="btn btn-lg btn-block loginBtn" ng-click="signup.createUser()">Submit</button>
 </form>
-<a ui-sref="login()">Click here to Login</a>
+<div class="text-center signinPrompt">
+  Already have an account? Click <a ui-sref="login()" class="signupLink">here</a> to login.
 </div>
+</div>
+

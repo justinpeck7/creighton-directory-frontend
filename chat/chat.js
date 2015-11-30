@@ -14,9 +14,10 @@ angular.module('creightonDir.chat', [
       }
     });
   })
-  .controller('ChatCtrl', function HomeController(socket, store, jwtHelper) {
+  .controller('ChatCtrl', function HomeController(socket, store, jwtHelper, $rootScope) {
     var chat = this;
     chat.messages = [];
+    $rootScope.showNavBar = true;
 
     var token = store.get('jwt');
     var jwt = jwtHelper.decodeToken(token);

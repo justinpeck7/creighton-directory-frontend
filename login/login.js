@@ -6,18 +6,21 @@ angular.module( 'creightonDir.login', [
   $stateProvider.state('login', {
     url: '/login',
     controller: 'LoginCtrl',
+    controllerAs: 'login',
     templateUrl: 'login/login.html'
   });
 })
-.controller( 'LoginCtrl', function LoginController( $scope, $http, store, $state) {
+.controller( 'LoginCtrl', function LoginController($http, store, $state, $rootScope) {
+  $rootScope.showNavBar = false;
+  var login = this;
+  login.user = {};
+  store.remove('jwt');
 
-  $scope.user = {};
-
-  $scope.login = function() {
+  login.login = function() {
     $http({
       url: 'http://localhost:3001/user/createSession',
       method: 'POST',
-      data: $scope.user
+      data: login.user
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
       $state.go('home');
@@ -25,5 +28,4 @@ angular.module( 'creightonDir.login', [
       alert(error.data);
     });
   }
-
 });
