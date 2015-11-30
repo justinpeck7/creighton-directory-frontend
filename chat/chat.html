@@ -1,6 +1,27 @@
-<div ng-repeat="msg in chat.messages track by $index">
-    <strong>{{msg.name}}: </strong><span>{{msg.message}}</span>
+<div>
+    <h2 class="text-center chatHeader">Choose a Chat Room</h2>
+    <div class="buttonWrapper">
+        <div class="btn-group btn-group-large" role="group">
+            <button type="button" class="btn btn-default" ng-click="chat.join(0)">Global</button>
+            <button type="button" class="btn btn-default" ng-click="chat.join(1)">Freshman</button>
+            <button type="button" class="btn btn-default" ng-click="chat.join(2)">Sophomore</button>
+            <button type="button" class="btn btn-default" ng-click="chat.join(3)">Junior</button>
+            <button type="button" class="btn btn-default" ng-click="chat.join(4)">Senior</button>
+        </div>
+    </div>
 </div>
-<form ng-submit="chat.send()">
-<input type="text" ng-model="chat.input"><input type="submit" value="send">
-</form>
+<div class="text-center currentRoom">Currently in: {{chat.room}}</div>
+<div>
+    <div class="chatRoom" id="chatRoom">
+        <div ng-repeat="msg in chat.messages track by $index">
+            <strong>{{msg.name}}: </strong><span>{{msg.message}}</span>
+        </div>
+    </div>
+    <form ng-submit="chat.send()" class="chatForm">
+<div class="input-group">
+    <input type="text" class="form-control" ng-model="chat.input">
+    <div class="input-group-btn">
+        <input type="submit" value="Send" class="btn btn-default">
+    </div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+.buttonWrapper {
+    text-align: center;
+}
+
+.chatRoom {
+    color: white;
+    width: 60%;
+    height: 600px;
+    margin: 0 auto;
+    background-color: rgba(51, 49, 49, 1);
+    border: 2px solid #484848;
+    overflow-y: scroll;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatForm {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.currentRoom {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #BDBDBD;
+}
+
