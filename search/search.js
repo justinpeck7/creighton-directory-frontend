@@ -24,10 +24,12 @@ angular.module('creightonDir.search', [
     });
 
     search.doLookup = function() {
+      search.loading = true;
       Find.get({
         name: search.lookup.name || ''
       }).$promise.then(function(data) {
         search.results = preProcessData(data);
+        search.loading = false;
       });
     };
 

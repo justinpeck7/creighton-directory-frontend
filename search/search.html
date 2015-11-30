@@ -9,6 +9,7 @@
 </form>
 <div class="advancedPrompt">No luck? Try the <a ng-click="search.showAdvanced()">Advanced</a> search</div>
 <hr>
+<img class="loading" src="assets/loading/loading.svg" alt="" ng-show="search.loading">
 <div class="resultsWrapper" ng-show="!!search.results">
 <div ng-repeat="result in search.results">
     <h2>{{result.name}}</h2>

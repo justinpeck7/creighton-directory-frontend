@@ -2,7 +2,7 @@
     <h2 class="text-center">Hello, {{home.username}}</h2>
     <h3 class="text-center" style="color: #5D5D5D;">Today's announcements</h3>
 </div>
-<img class="loading" src="assets/loading/loading.gif" alt="" ng-show="home.loading">
+<img class="loading" src="assets/loading/loading.svg" alt="" ng-show="home.loading">
 <div ng-repeat="anc in home.announcements">
     <h4>{{anc.title}}</h4>
     <p class="ancContent">{{anc.content}}</p>
