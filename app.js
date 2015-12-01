@@ -44,5 +44,5 @@ angular.module('creightonDir', [
     var app = this,
       token = store.get('jwt'),
       jwt = jwtHelper.decodeToken(token);
-      app.netId = jwt.netId;
+    app.netId = jwt.netId;
   });

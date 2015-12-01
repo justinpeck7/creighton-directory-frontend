@@ -1,4 +1,6 @@
-<img class="loading userLoading" src="assets/loading/loading.svg" alt="" ng-show="user.loading">
+<div ng-show="user.loading">
+    <div class='uil-rolling-css userLoading loading' style='-webkit-transform:scale(0.6)'><div><div></div><div></div></div></div>
+</div>
 <div ng-show="!!user.info">
     <h1 class="nameHeader">{{user.info.name}}</h1>
     <div class="col-md-5">

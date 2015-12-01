@@ -66,7 +66,9 @@
     <div class="searchPrompt">Back to the <a ng-click="search.toggleAdvanced()">Basic</a> search</div>
 </div>
 <hr>
-<img class="loading" src="assets/loading/loading.svg" alt="" ng-show="search.loading">
+<div ng-show="search.loading">
+    <div class='uil-rolling-css loading' style='-webkit-transform:scale(0.6)'><div><div></div><div></div></div></div>
+</div>
 <div class="resultsWrapper" ng-show="!!search.results">
     <div ng-repeat="result in search.results">
         <h2><a href="#/user/{{result.netId}}" class="resultLink">{{result.name}}</a></h2>
