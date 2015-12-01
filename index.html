@@ -1,60 +1,60 @@
 <!DOCTYPE html>
-<html ng-app="creightonDir" ng-controller="AppCtrl">
-  <head>
-    <title ng-bind="pageTitle"></title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href='assets/fonts/pt-sans-caption.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="app.css">
-    <link rel="stylesheet" type="text/css" href="home/home.css">
-    <link rel="stylesheet" type="text/css" href="signup/signup.css">
-    <link rel="stylesheet" type="text/css" href="login/login.css">
-    <link rel="stylesheet" type="text/css" href="chat/chat.css">
-    <link rel="stylesheet" type="text/css" href="search/search.css">
-    <link rel="stylesheet" type="text/css" href="user/user.css">
-    <link rel="stylesheet" type="text/css" href="announcements/announcements.css">
-
-    <script type="text/javascript" src="bower_components/angularjs/angular.js"></script>
-    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/a0-angular-storage/dist/angular-storage.js" type="text/javascript"> </script>
-    <script src="bower_components/angular-jwt/dist/angular-jwt.js" type="text/javascript"> </script>
-    <script src="assets/socket-io/socket.io.js"></script>
-    <script src="bower_components/angular-socket-io/socket.js" type="text/javascript"> </script>
-    <script src="assets/ui-bootstrap/ui-bootstrap-custom-0.14.3.js"></script>
-    <script src="assets/ui-bootstrap/ui-bootstrap-custom-tpls-0.14.3.js"></script>
-
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="home/home.js"></script>
-    <script type="text/javascript" src="login/login.js"></script>
-    <script type="text/javascript" src="signup/signup.js"></script>
-    <script type="text/javascript" src="chat/chat.js"></script>
-    <script type="text/javascript" src="search/search.js"></script>
-    <script type="text/javascript" src="user/user.js"></script>
-    <script type="text/javascript" src="announcements/announcements.js"></script>
-
-  </head>
-<body>
-    <nav class="navbar navbar-inverse" ng-show="showNavBar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <span class="navbar-brand">Creighton Directory</span>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/">Home</a></li>
-                    <li><a href="#/search">Student Search</a></li>
-                    <li><a href="#/chat">Live Chats</a></li>
+<html ng-app="creightonDir" ng-controller="AppCtrl as app">
+    <head>
+        <title ng-bind="pageTitle"></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href='assets/fonts/pt-sans-caption.css' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" type="text/css" href="app.css">
+            <link rel="stylesheet" type="text/css" href="home/home.css">
+            <link rel="stylesheet" type="text/css" href="signup/signup.css">
+            <link rel="stylesheet" type="text/css" href="login/login.css">
+            <link rel="stylesheet" type="text/css" href="chat/chat.css">
+            <link rel="stylesheet" type="text/css" href="search/search.css">
+            <link rel="stylesheet" type="text/css" href="user/user.css">
+            <link rel="stylesheet" type="text/css" href="announcements/announcements.css">
+            <script type="text/javascript" src="bower_components/angularjs/angular.js"></script>
+            <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+            <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+            <script src="bower_components/a0-angular-storage/dist/angular-storage.js" type="text/javascript"> </script>
+            <script src="bower_components/angular-jwt/dist/angular-jwt.js" type="text/javascript"> </script>
+            <script src="assets/socket-io/socket.io.js"></script>
+            <script src="bower_components/angular-socket-io/socket.js" type="text/javascript"> </script>
+            <script src="assets/ui-bootstrap/ui-bootstrap-custom-0.14.3.js"></script>
+            <script src="assets/ui-bootstrap/ui-bootstrap-custom-tpls-0.14.3.js"></script>
+            <script type="text/javascript" src="app.js"></script>
+            <script type="text/javascript" src="home/home.js"></script>
+            <script type="text/javascript" src="login/login.js"></script>
+            <script type="text/javascript" src="signup/signup.js"></script>
+            <script type="text/javascript" src="chat/chat.js"></script>
+            <script type="text/javascript" src="search/search.js"></script>
+            <script type="text/javascript" src="user/user.js"></script>
+            <script type="text/javascript" src="announcements/announcements.js"></script>
+        </head>
+        <body>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-init="navCollapsed=true" ng-click="navCollapsed=!navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand">Creighton Directory</span>
+                </div>
+                <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/search">Student Search</a></li>
+                        <li><a href="#/chat">Live Chats</a></li>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#/login">Logout</a></li>
                     <li><a href="https://www.creighton.edu/">Creighton Home</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    <div class="container" ui-view></div>
-</body>
+        </nav>
+        <div class="container" ui-view></div>
+    </body>
 </html>

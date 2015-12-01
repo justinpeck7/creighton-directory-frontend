@@ -11,14 +11,15 @@ angular.module('creightonDir', [
     'angular-jwt',
     'angular-storage',
     'ngResource',
-    'btford.socket-io'
+    'btford.socket-io',
+    'ui.bootstrap'
   ])
   .config(function myAppConfig($urlRouterProvider, jwtInterceptorProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/');
     /*Intercept all HTTP calls and slap our web token on so the server knows who we are*/
     jwtInterceptorProvider.tokenGetter = function(store) {
       return store.get('jwt');
-    }
+    };
     $httpProvider.interceptors.push('jwtInterceptor');
   })
   .run(function($rootScope, $state, store, jwtHelper) {
@@ -39,10 +40,6 @@ angular.module('creightonDir', [
       ioSocket: mysocket
     });
   })
-  .controller('AppCtrl', function AppCtrl($scope, $location) {
-    $scope.$on('$routeChangeSuccess', function(e, nextRoute) {
-      if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
-        $scope.pageTitle = nextRoute.$$route.pageTitle;
-      }
-    });
+  .controller('AppCtrl', function AppCtrl($scope) {
+    var app = this;
   });
