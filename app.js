@@ -6,6 +6,7 @@ angular.module('creightonDir', [
     'creightonDir.signup',
     'creightonDir.chat',
     'creightonDir.search',
+    'creightonDir.user',
     'creightonDir.announcements',
     'angular-jwt',
     'angular-storage',

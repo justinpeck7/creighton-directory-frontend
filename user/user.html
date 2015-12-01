@@ -1,0 +1,28 @@
+<img class="loading" src="assets/loading/loading.svg" alt="" ng-show="user.loading">
+<div ng-show="!!user.info">
+    <h1 class="nameHeader">{{user.info.name}}</h1>
+    <div class="col-md-5">
+        <h2>Net ID: </h2><span class="userInfo">{{user.info.netId}}</span>
+    </div>
+    <div class="col-md-7">
+        <h2>Email: </h2><span class="userInfo">{{user.info.email}}</span>
+    </div>
+    <div class="col-md-5">
+        <h2>Major: </h2><span class="userInfo">{{user.info.major}}</span>
+    </div>
+    <div class="col-md-7">
+        <h2>Graduating Class: </h2><span class="userInfo">{{user.info.gradClass}}</span>
+    </div>
+    <div class="col-md-5">
+        <h2>Dorm Building: </h2><span class="userInfo">{{user.info.dormName}}</span>
+    </div>
+    <div class="col-md-7">
+        <h2>Dorm Room: </h2><span class="userInfo">{{user.info.dormRoom}}</span>
+    </div>
+    <div class="col-md-5">
+        <h2>Phone #: </h2><span class="userInfo">{{user.info.phone}}</span>
+    </div>
+    <div class="col-md-7">
+        <h2>Groups: </h2><span class="userInfo">{{user.info.groups}}</span>
+    </div>
+</div>

@@ -30,3 +30,11 @@
 .searchSubmit:hover {
     color: gray;
 }
+
+.resultLink {
+    color: white;
+}
+
+.resultLink:hover {
+    color: #26AFDA;
+}

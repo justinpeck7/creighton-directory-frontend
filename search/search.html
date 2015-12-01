@@ -69,7 +69,7 @@
 <img class="loading" src="assets/loading/loading.svg" alt="" ng-show="search.loading">
 <div class="resultsWrapper" ng-show="!!search.results">
     <div ng-repeat="result in search.results">
-        <h2>{{result.name}}</h2>
+        <h2><a href="#/user/{{result.netId}}" class="resultLink">{{result.name}}</a></h2>
         <div class="row">
             <div class="col-md-5">
                 <span class="resultLabel">Net ID: </span><span>{{result.netId}}</span>
@@ -82,18 +82,6 @@
             </div>
             <div class="col-md-7">
                 <span class="resultLabel">Graduating Class: </span><span>{{result.gradClass}}</span>
-            </div>
-            <div class="col-md-5">
-                <span class="resultLabel">Dorm Building: </span><span>{{result.dormName}}</span>
-            </div>
-            <div class="col-md-7">
-                <span class="resultLabel">Dorm Room: </span><span>{{result.dormRoom}}</span>
-            </div>
-            <div class="col-md-5">
-                <span class="resultLabel">Phone #: </span><span>{{result.phone}}</span>
-            </div>
-            <div class="col-md-7">
-                <span class="resultLabel">Groups: </span><span>{{result.groups}}</span>
             </div>
         </div>
     </div>
