@@ -28,5 +28,5 @@ angular.module( 'creightonDir.login', [
     }, function(error) {
       alert(error.data);
     });
-  }
+  };
 });

@@ -26,7 +26,7 @@ angular.module('creightonDir.search', [
     /*Toggle showing the advanced/basic form*/
     search.toggleAdvanced = function() {
       search.advancedLookup = !search.advancedLookup;
-    }
+    };
 
     /*basic lookup*/
     search.doLookup = function() {
@@ -55,7 +55,7 @@ angular.module('creightonDir.search', [
         search.results = preProcessData(data);
         search.loading = false;
       });
-    }
+    };
 
     /*format our groups so they don't show up like ['group 1', 'group2'] on the page*/
     function preProcessData(data) {

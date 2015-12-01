@@ -32,7 +32,7 @@
             <script type="text/javascript" src="announcements/announcements.js"></script>
         </head>
         <body>
-            <nav class="navbar navbar-inverse" role="navigation">
+            <nav class="navbar navbar-inverse" role="navigation" ng-show="showNavBar">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" ng-init="navCollapsed=true" ng-click="navCollapsed=!navCollapsed">
                     <span class="sr-only">Toggle navigation</span>
@@ -47,6 +47,7 @@
                         <li><a href="#/">Home</a></li>
                         <li><a href="#/search">Student Search</a></li>
                         <li><a href="#/chat">Live Chats</a></li>
+                        <li><a href="#/user/{{app.netId}}">Profile</a></li>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

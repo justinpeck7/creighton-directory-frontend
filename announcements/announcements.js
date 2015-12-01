@@ -29,5 +29,5 @@ angular.module('creightonDir.announcements', [
       }).then(function(res) {
         anc.added = 'Added!';
       });
-    }
+    };
   });

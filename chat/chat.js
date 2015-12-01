@@ -1,8 +1,8 @@
 angular.module('creightonDir.chat', [
-    'ui.router',
-    'angular-storage',
-    'angular-jwt'
-  ])
+  'ui.router',
+  'angular-storage',
+  'angular-jwt'
+])
   .config(function($stateProvider) {
     $stateProvider.state('chat', {
       url: '/chat',
@@ -45,7 +45,7 @@ angular.module('creightonDir.chat', [
         chat.room = rooms[index];
         chat.messages = chatArrays[rooms[index]];
       }
-    }
+    };
 
     /*Send a message to the server, clear our input, and scroll to the bottom of the chat div*/
     chat.send = function() {
@@ -56,7 +56,7 @@ angular.module('creightonDir.chat', [
       });
       chat.input = '';
       updateScroll();
-    }
+    };
 
     /*Receive messages from the server and delegate them to the correct chatArrays message array*/
     socket.on('message', function(data) {
@@ -67,7 +67,7 @@ angular.module('creightonDir.chat', [
         name: data.name,
         message: data.message,
         isSelf: data.isSelf
-      })
+      });
     });
 
     /*Scroll to the bottom of the chat div. Wrapped in a $timeout because ng-repeat is slow so we need

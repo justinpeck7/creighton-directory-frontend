@@ -5,3 +5,8 @@
 .nameHeader {
     font-size: 40px;
 }
+
+.userLoading {
+    display: block;
+    margin-top: 30vh;
+}
