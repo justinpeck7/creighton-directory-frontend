@@ -18,13 +18,17 @@ angular.module('creightonDir.search', [
     search.lookup = {};
     search.advanced = {};
     search.advancedLookup = false;
+    /*$resource is a wrapper for the $http service. It allows us to make http calls that return a $promise,
+    which is just a variable that can be 'resolved' at any given point*/
     var Find = $resource('http://localhost:3001/user/auth/findAll'),
       FindAdvanced = $resource('http://localhost:3001/user/auth/findAllAdvanced');
 
+    /*Toggle showing the advanced/basic form*/
     search.toggleAdvanced = function() {
       search.advancedLookup = !search.advancedLookup;
     }
 
+    /*basic lookup*/
     search.doLookup = function() {
       search.results = undefined;
       search.loading = true;
@@ -36,6 +40,7 @@ angular.module('creightonDir.search', [
       });
     };
 
+    /*advanced lookup*/
     search.doAdvancedLookup = function() {
       search.results = undefined;
       search.loading = true;
@@ -52,6 +57,7 @@ angular.module('creightonDir.search', [
       });
     }
 
+    /*format our groups so they don't show up like ['group 1', 'group2'] on the page*/
     function preProcessData(data) {
       for (var i in data.users) {
         if (data.users[i].groups) {

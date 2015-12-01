@@ -18,6 +18,9 @@ angular.module('creightonDir.announcements', [
     anc.msg = {};
     anc.added = '';
 
+    /*Create a new announcement. Right now this page is only accessable by typing in the
+    URL. Not sure if we should have a link for it or not. Probably don't want anybody to be able to
+    add announcements*/
     anc.send = function() {
       $http({
         url: 'http://localhost:3001/announcements/auth/new',
@@ -27,5 +30,4 @@ angular.module('creightonDir.announcements', [
         anc.added = 'Added!';
       });
     }
-
   });

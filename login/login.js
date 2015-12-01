@@ -16,6 +16,7 @@ angular.module( 'creightonDir.login', [
   login.user = {};
   store.remove('jwt');
 
+  /*Send user data and attach returned token to local store*/
   login.login = function() {
     $http({
       url: 'http://localhost:3001/user/createSession',
