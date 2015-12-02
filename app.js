@@ -40,9 +40,6 @@ angular.module('creightonDir', [
     ioSocket: mysocket
   });
 })
-  .controller('AppCtrl', function AppCtrl(store, jwtHelper) {
-    var app = this,
-      token = store.get('jwt'),
-      jwt = jwtHelper.decodeToken(token);
-    app.netId = jwt.netId;
+  .controller('AppCtrl', function AppCtrl() {
+    var app = this;
   });

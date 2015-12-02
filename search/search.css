@@ -2,6 +2,12 @@
     width: 40%;
 }
 
+@media screen and (max-width: 600px) {
+    .basicForm {
+        width: 100%;
+    }
+}
+
 .searchPrompt {
     margin-top: 15px;
 }

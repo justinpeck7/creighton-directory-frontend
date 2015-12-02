@@ -17,11 +17,15 @@ angular.module('creightonDir.home', [
   })
   .controller('HomeCtrl', function HomeController($http, store, jwtHelper, $rootScope) {
     var home = this,
-      jwt  = store.get('jwt');
+      jwt  = store.get('jwt'),
+      decodedToken = jwtHelper.decodeToken(jwt);
     $rootScope.showNavBar = true;
     /*So we know who to say 'hello' to*/
-    home.username = jwtHelper.decodeToken(jwt).name.split(' ')[0];
+    home.username =decodedToken.name.split(' ')[0];
     home.loading = true;
+
+    /*For the profile link in the nav*/
+    $rootScope.netId = decodedToken.netId;
 
     /*Get announcements so we can paste them on the home template*/
     $http.get('http://localhost:3001/announcements/auth/all').then(function(res) {
