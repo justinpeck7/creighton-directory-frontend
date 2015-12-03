@@ -7,42 +7,44 @@
             <img ng-src="http://localhost:3001/profile/image?netId={{user.info.netId}}" class="profilePicture">
         </div>
     </div>
-    <h1 class="nameHeader">{{user.info.name}}</h1>
-    <div class="row">
-    <div class="col-md-5">
-        <h2>Net ID: </h2><span class="userInfo">{{user.info.netId}}</span>
-    </div>
-    <div class="col-md-7">
-        <h2>Email: </h2><span class="userInfo">{{user.info.email}}</span>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-md-5">
-        <h2>Major: </h2><span class="userInfo">{{user.info.major}}</span>
-    </div>
-    <div class="col-md-7">
-        <h2>Graduating Class: </h2><span class="userInfo">{{user.info.gradClass}}</span>
-    </div>
+    <div class="row" >
+        <div class="col-md-5">
+            <h1 class="nameHeader">{{user.info.name}}</h1>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6" ng-show="user.showEditButton">
+            <button class="btn btn-lg btn-block editButton" ng-click="user.showEdit()">Edit Info</button>
+        </div>
     </div>
     <div class="row">
-    <div class="col-md-5">
-        <h2>Dorm Building: </h2><span class="userInfo">{{user.info.dormName}}</span>
-    </div>
-    <div class="col-md-7">
-        <h2>Dorm Room: </h2><span class="userInfo">{{user.info.dormRoom}}</span>
-    </div>
+        <div class="col-md-5">
+            <h2>Net ID: </h2><span class="userInfo">{{user.info.netId}}</span>
+        </div>
+        <div class="col-md-7">
+            <h2>Email: </h2><span class="userInfo">{{user.info.email}}</span>
+        </div>
     </div>
     <div class="row">
-    <div class="col-md-5">
-        <h2>Phone #: </h2><span class="userInfo">{{user.info.phone}}</span>
+        <div class="col-md-5">
+            <h2>Major: </h2><span class="userInfo">{{user.info.major}}</span>
+        </div>
+        <div class="col-md-7">
+            <h2>Graduating Class: </h2><span class="userInfo">{{user.info.gradClass}}</span>
+        </div>
     </div>
-    <div class="col-md-7">
-        <h2>Groups: </h2><span class="userInfo">{{user.info.groups}}</span>
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Dorm Building: </h2><span class="userInfo">{{user.info.dormName}}</span>
+        </div>
+        <div class="col-md-7">
+            <h2>Dorm Room: </h2><span class="userInfo">{{user.info.dormRoom}}</span>
+        </div>
     </div>
-    </div>
-    <div class="row editProfile" ng-show="user.showEditButton">
-        <div class="col-md-2">
-            <button class="btn btn-lg btn-block" ng-click="user.showEdit()">Edit Info</button>
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Phone #: </h2><span class="userInfo">{{user.info.phone}}</span>
+        </div>
+        <div class="col-md-7">
+            <h2>Groups: </h2><span class="userInfo">{{user.info.groups}}</span>
         </div>
     </div>
 </div>
