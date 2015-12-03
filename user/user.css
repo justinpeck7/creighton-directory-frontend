@@ -23,8 +23,12 @@
     padding-top: 30px;
 }
 
-.modalButton {
+.modalSubmit {
     background-color: #0095af;
+}
+
+.modalClose {
+    background-color: rgb(162, 12, 12);
 }
 
 .profilePicture {

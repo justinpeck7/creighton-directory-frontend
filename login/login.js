@@ -14,10 +14,12 @@ angular.module( 'creightonDir.login', [
   $rootScope.showNavBar = false;
   var login = this;
   login.user = {};
+  login.loading = false;
   store.remove('jwt');
 
   /*Send user data and attach returned token to local store*/
   login.login = function() {
+    login.loading = true;
     $http({
       url: 'http://localhost:3001/user/createSession',
       method: 'POST',

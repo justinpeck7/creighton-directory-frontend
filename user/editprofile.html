@@ -56,8 +56,14 @@
                 <label for="picture">Profile Picture:</label>
                 <input type="file" id="picture" name="picture" file-model="modal.upload">
             </div>
+        </div>
+        <div class="row modalFormRow">
             <div class="col-md-6">
-                <button class="btn btn-lg btn-block modalButton" value="submit">Submit</button>
+                <button class="btn btn-lg btn-block modalClose" ng-click="modal.close()">Cancel</button>
+            </div>
+
+            <div class="col-md-6">
+                <button class="btn btn-lg btn-block modalSubmit" value="submit">Submit</button>
             </div>
         </div>
     </form>
