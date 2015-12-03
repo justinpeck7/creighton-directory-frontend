@@ -3,9 +3,30 @@
 }
 
 .nameHeader {
-    font-size: 40px;
+    font-size: 55px;
 }
 
 .userLoading {
     margin-top: 30vh;
+}
+
+.editProfile {
+    margin-top: 40px;
+}
+
+.modalWindow {
+    background-color: rgb(44, 45, 47);
+    padding: 60px;
+}
+
+.modalFormRow {
+    padding-top: 30px;
+}
+
+.modalButton {
+    background-color: #0095af;
+}
+
+.profilePicture {
+    max-width: 250px;
 }
