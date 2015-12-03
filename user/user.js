@@ -77,10 +77,8 @@ angular.module('creightonDir.user', [
         picture: modal.upload,
         netId: netId,
         userData: JSON.stringify(modal.user)
-      }).$promise.then(function(data) {
-        // console.log(data);
+      }).$promise.then(function() {
         $scope.$close();
       });
     };
-
   });
