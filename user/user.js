@@ -73,12 +73,17 @@ angular.module('creightonDir.user', [
     });
 
     modal.sendFile = function() {
-      Upload.save({
-        picture: modal.upload,
-        netId: netId,
-        userData: JSON.stringify(modal.user)
-      }).$promise.then(function() {
-        $scope.$close();
-      });
+      if (!modal.user.password || (modal.user.password === modal.user.passwordConfirm)) {
+        Upload.save({
+          picture: modal.upload,
+          netId: netId,
+          userData: JSON.stringify(modal.user)
+        }).$promise.then(function() {
+          $scope.$close();
+        });
+      }
+      else {
+        alert('Passwords must match');
+      }
     };
   });
