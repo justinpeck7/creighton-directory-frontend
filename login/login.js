@@ -25,9 +25,11 @@ angular.module( 'creightonDir.login', [
       method: 'POST',
       data: login.user
     }).then(function(response) {
+      login.loading = false;
       store.set('jwt', response.data.id_token);
       $state.go('home');
     }, function(error) {
+      login.loading = false;
       alert(error.data);
     });
   };
