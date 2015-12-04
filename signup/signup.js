@@ -10,7 +10,7 @@ angular.module( 'creightonDir.signup', [
     templateUrl: 'signup/signup.html'
   });
 })
-.controller('SignupCtrl', function SignupController($http, store, $state) {
+.controller('SignupCtrl', function SignupController($http, store, $state, $rootScope) {
   var signup = this;
   signup.user = {};
 
@@ -22,6 +22,7 @@ angular.module( 'creightonDir.signup', [
       data: signup.user
     }).then(function(response) {
       store.set('jwt', response.data.id_token);
+      $rootScope.$broadcast('setProfile');
       $state.go('home');
     }, function(error) {
       alert(error.data);

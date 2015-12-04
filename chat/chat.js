@@ -16,6 +16,7 @@ angular.module('creightonDir.chat', [
   })
   .controller('ChatCtrl', function HomeController(socket, store, jwtHelper, $rootScope, $timeout) {
     $rootScope.showNavBar = true;
+    $rootScope.$broadcast('setProfile');
     var chat = this;
     chat.messages = [];
 

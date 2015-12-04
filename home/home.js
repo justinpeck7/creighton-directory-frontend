@@ -20,12 +20,10 @@ angular.module('creightonDir.home', [
       jwt  = store.get('jwt'),
       decodedToken = jwtHelper.decodeToken(jwt);
     $rootScope.showNavBar = true;
+    $rootScope.$broadcast('setProfile');
     /*So we know who to say 'hello' to*/
     home.username =decodedToken.name.split(' ')[0];
     home.loading = true;
-
-    /*For the profile link in the nav*/
-    $rootScope.netId = decodedToken.netId;
 
     /*Get announcements so we can paste them on the home template*/
     $http.get('http://localhost:3001/announcements/auth/all').then(function(res) {

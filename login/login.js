@@ -27,6 +27,7 @@ angular.module( 'creightonDir.login', [
     }).then(function(response) {
       login.loading = false;
       store.set('jwt', response.data.id_token);
+      $rootScope.$broadcast('setProfile');
       $state.go('home');
     }, function(error) {
       login.loading = false;

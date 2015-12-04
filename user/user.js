@@ -15,14 +15,13 @@ angular.module('creightonDir.user', [
   })
   .controller('UserCtrl', function HomeController($rootScope, $stateParams, $resource, store, jwtHelper, $uibModal) {
     $rootScope.showNavBar = true;
+    $rootScope.$broadcast('setProfile');
     var user = this,
       FindOne = $resource('http://localhost:3001/user/auth/findOne'),
       token = store.get('jwt'),
       jwt = jwtHelper.decodeToken(token),
       netId = jwt.netId;
     user.loading = true;
-
-
 
     /*Find a single user and return results*/
     FindOne.get({
@@ -33,8 +32,6 @@ angular.module('creightonDir.user', [
       user.showEditButton = user.info.netId === netId;
       user.loading = false;
     });
-
-
 
     user.showEdit = function() {
       $uibModal.open({
@@ -80,6 +77,7 @@ angular.module('creightonDir.user', [
           userData: JSON.stringify(modal.user)
         }).$promise.then(function() {
           $scope.$close();
+          $rootScope.$broadcast('profileUpdated');
         });
       }
       else {

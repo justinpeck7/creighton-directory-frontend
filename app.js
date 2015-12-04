@@ -55,6 +55,14 @@ angular.module('creightonDir', [
         }
     };
 }])
-  .controller('AppCtrl', function AppCtrl() {
+  .controller('AppCtrl', function AppCtrl($rootScope, store, jwtHelper) {
     var app = this;
+
+    /*For the profile link in the nav*/
+    $rootScope.$on('setProfile', function() {
+      var jwt = store.get('jwt'),
+        decodedToken = jwtHelper.decodeToken(jwt);
+      $rootScope.loggedInNetId = decodedToken.netId;
+    });
+
   });

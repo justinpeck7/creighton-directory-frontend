@@ -14,6 +14,7 @@ angular.module('creightonDir.search', [
   })
   .controller('SearchCtrl', function HomeController($rootScope, $resource) {
     $rootScope.showNavBar = true;
+    $rootScope.$broadcast('setProfile');
     var search = this;
     search.lookup = {};
     search.advanced = {};

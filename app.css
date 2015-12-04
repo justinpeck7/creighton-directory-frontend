@@ -11,7 +11,7 @@ button {
     background-color: rgb(44, 45, 47);
 }
 
-button:hover {
+button:hover, button:focus {
     color: gray !important;
 }
 
