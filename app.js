@@ -35,7 +35,7 @@ angular.module('creightonDir', [
   })
 /*Socket config. This is the connection we use in the chat module*/
 .factory('socket', function(socketFactory) {
-  var mysocket = io.connect('http://localhost:3001');
+  var mysocket = io.connect('http://174.74.91.215:3000');
   return socketFactory({
     ioSocket: mysocket
   });

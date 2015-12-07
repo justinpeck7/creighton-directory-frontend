@@ -21,7 +21,7 @@ angular.module( 'creightonDir.login', [
   login.login = function() {
     login.loading = true;
     $http({
-      url: 'http://localhost:3001/user/createSession',
+      url: '/user/createSession',
       method: 'POST',
       data: login.user
     }).then(function(response) {

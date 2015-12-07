@@ -26,7 +26,7 @@ angular.module('creightonDir.home', [
     home.loading = true;
 
     /*Get announcements so we can paste them on the home template*/
-    $http.get('http://localhost:3001/announcements/auth/all').then(function(res) {
+    $http.get('/announcements/auth/all').then(function(res) {
       home.announcements = res.data;
       home.loading = false;
     });

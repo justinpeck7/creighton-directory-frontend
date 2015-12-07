@@ -17,7 +17,7 @@ angular.module( 'creightonDir.signup', [
   /*Send our user data, and attach the returned web token to our 'store' (cookie or local storage)*/
   signup.createUser = function() {
     $http({
-      url: 'http://localhost:3001/user/createUser',
+      url: '/user/createUser',
       method: 'POST',
       data: signup.user
     }).then(function(response) {

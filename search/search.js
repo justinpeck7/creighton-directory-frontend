@@ -21,8 +21,8 @@ angular.module('creightonDir.search', [
     search.advancedLookup = false;
     /*$resource is a wrapper for the $http service. It allows us to make http calls that return a $promise,
     which is just a variable that can be 'resolved' at any given point*/
-    var Find = $resource('http://localhost:3001/user/auth/findAll'),
-      FindAdvanced = $resource('http://localhost:3001/user/auth/findAllAdvanced');
+    var Find = $resource('/user/auth/findAll'),
+      FindAdvanced = $resource('/user/auth/findAllAdvanced');
 
     /*Toggle showing the advanced/basic form*/
     search.toggleAdvanced = function() {

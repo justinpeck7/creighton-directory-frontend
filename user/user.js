@@ -17,7 +17,7 @@ angular.module('creightonDir.user', [
     $rootScope.showNavBar = true;
     $rootScope.$broadcast('setProfile');
     var user = this,
-      FindOne = $resource('http://localhost:3001/user/auth/findOne'),
+      FindOne = $resource('/user/auth/findOne'),
       token = store.get('jwt'),
       jwt = jwtHelper.decodeToken(token),
       netId = jwt.netId;
@@ -58,7 +58,7 @@ angular.module('creightonDir.user', [
       return fd;
     }
 
-    var Upload = $resource('http://localhost:3001/upload/auth/profile', {}, {
+    var Upload = $resource('/upload/auth/profile', {}, {
       save: {
         method: 'POST',
         transformRequest: formDataObject,

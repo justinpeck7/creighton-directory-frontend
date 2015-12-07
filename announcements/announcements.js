@@ -23,7 +23,7 @@ angular.module('creightonDir.announcements', [
     add announcements*/
     anc.send = function() {
       $http({
-        url: 'http://localhost:3001/announcements/auth/new',
+        url: '/announcements/auth/new',
         method: 'POST',
         data: anc.msg
       }).then(function(res) {
