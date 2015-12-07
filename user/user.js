@@ -77,7 +77,6 @@ angular.module('creightonDir.user', [
           userData: JSON.stringify(modal.user)
         }).$promise.then(function() {
           $scope.$close();
-          $rootScope.$broadcast('profileUpdated');
         });
       }
       else {

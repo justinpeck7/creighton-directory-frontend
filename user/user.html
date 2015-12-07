@@ -1,7 +1,7 @@
 <div ng-show="user.loading">
     <div class='uil-rolling-css userLoading loading' style='-webkit-transform:scale(0.6)'><div><div></div><div></div></div></div>
 </div>
-<div ng-show="!!user.info">
+<div ng-show="!!user.info" class="infoWrapper">
     <div class="row">
         <div class="col-md-4">
             <img ng-src="http://localhost:3001/profile/image?netId={{user.info.netId}}" class="profilePicture">
