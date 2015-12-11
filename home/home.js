@@ -1,9 +1,9 @@
 /*Define our home module*/
 angular.module('creightonDir.home', [
-    'ui.router',
-    'angular-storage',
-    'angular-jwt'
-  ])
+  'ui.router',
+  'angular-storage',
+  'angular-jwt'
+])
   .config(function($stateProvider) {
     $stateProvider.state('home', {
       url: '/',
@@ -17,12 +17,12 @@ angular.module('creightonDir.home', [
   })
   .controller('HomeCtrl', function HomeController($http, store, jwtHelper, $rootScope, $state) {
     var home = this,
-      jwt  = store.get('jwt'),
+      jwt = store.get('jwt'),
       decodedToken = jwtHelper.decodeToken(jwt);
     $rootScope.showNavBar = true;
     $rootScope.$broadcast('setProfile');
     /*So we know who to say 'hello' to*/
-    home.username =decodedToken.name.split(' ')[0];
+    home.username = decodedToken.name.split(' ')[0];
     home.loading = true;
     home.canAddAnnouncements = false;
 
