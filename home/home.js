@@ -15,7 +15,7 @@ angular.module('creightonDir.home', [
       }
     });
   })
-  .controller('HomeCtrl', function HomeController($http, store, jwtHelper, $rootScope) {
+  .controller('HomeCtrl', function HomeController($http, store, jwtHelper, $rootScope, $state) {
     var home = this,
       jwt  = store.get('jwt'),
       decodedToken = jwtHelper.decodeToken(jwt);
@@ -24,11 +24,19 @@ angular.module('creightonDir.home', [
     /*So we know who to say 'hello' to*/
     home.username =decodedToken.name.split(' ')[0];
     home.loading = true;
+    home.canAddAnnouncements = false;
 
     /*Get announcements so we can paste them on the home template*/
     $http.get('/announcements/auth/all').then(function(res) {
       home.announcements = res.data;
       home.loading = false;
+      $http.get('/announcements/auth/canAdd').then(function(res) {
+        home.canAddAnnouncements = res.data;
+      });
     });
+
+    home.addAnnouncement = function() {
+      $state.go('announcements');
+    };
 
   });
