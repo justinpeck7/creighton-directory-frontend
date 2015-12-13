@@ -77,6 +77,7 @@ angular.module('creightonDir.user', [
           userData: JSON.stringify(modal.user)
         }).$promise.then(function() {
           $scope.$close();
+          location.reload();
         });
       }
       else {

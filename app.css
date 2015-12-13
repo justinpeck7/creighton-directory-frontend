@@ -30,3 +30,10 @@ button:hover, button:focus {
 .navbar-brand:hover {
     color: #9d9d9d !important;
 }
+
+@media (max-width: 830px) {
+    .nav > li > a {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
