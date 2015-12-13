@@ -28,6 +28,8 @@ angular.module('creightonDir.announcements', [
         data: anc.msg
       }).then(function(res) {
         anc.added = 'Added!';
+        ang.msg.title = '';
+        anc.msg.content = '';
       });
     };
   });
