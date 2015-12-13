@@ -69,7 +69,12 @@ angular.module('creightonDir.user', [
       }
     });
 
+    modal.close = function() {
+      $scope.$close();
+    };
+
     modal.sendFile = function() {
+      console.log('got here');
       if (!modal.user.password || (modal.user.password === modal.user.passwordConfirm)) {
         Upload.save({
           picture: modal.upload,
